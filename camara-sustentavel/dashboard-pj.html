@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Comercial - Tatuí Verde</title>
+    <link rel="icon" href="assets/brasao-tatui.webp" type="image/webp">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header-app">
+        <a href="../index.html" class="logo-link">
+            <img src="assets/brasao-tatui.webp" alt="Brasão de Tatuí" class="header-logo-img">
+            <div class="logo-text">
+                <strong>Prefeitura de Tatuí</strong>
+                <span>Sistema de Gestão Sustentável</span>
+            </div>
+        </a>
+        <button class="menu-toggle" aria-label="Abrir menu">
+            <span class="hamburger-icon"></span>
+        </button>
+        <ul class="nav-app">
+            <li><button class="menu-close" aria-label="Fechar menu">&times;</button></li>
+            <li><a href="../index.html"><span class="nav-icon">🏠</span> Início</a></li>
+            <li><a href="mapa.html"><span class="nav-icon">📌</span> Onde Descartar?</a></li>
+            <li><a href="dashboard.html"><span class="nav-icon">📊</span> Visão Geral</a></li>
+            <li><a href="tatui-verde.html" class="active"><span class="nav-icon">🌳</span> Tatuí Verde</a></li>
+            </ul>
+    </header>
+
+    <main class="container">
+
+        <section class="hero-banner section-spacing">
+             <h1><span class="login-icon">🏬</span> Painel Comercial</h1>
+             <p>Olá, [Razão Social da Empresa]! Gerencie seus registros e acompanhe o status do seu Selo Sustentável.</p>
+        </section>
+
+        <section class="cards-informativos section-spacing">
+
+            <div class="card card-selo">
+                <h3>Seu Selo Sustentável</h3>
+                <div class="selo-display selo-prata">
+                     <span class="selo-icon">🥈</span>
+                     <span class="selo-text">Selo Prata</span>
+                </div>
+                <p class="selo-goal">Meta para o <strong>Selo Ouro</strong>: 2000kg/ano. (Progresso: 1200kg)</p>
+                <a href="#relatorios" class="btn-card-secondary">Baixar meu Selo</a>
+            </div>
+
+            <div class="card card-stats-pj">
+                <h3>Resumo de Destinações</h3>
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <span class="stat-value">15</span>
+                        <span class="stat-label">Registros Aprovados</span>
+                    </div>
+                     <div class="stat-item">
+                        <span class="stat-value">1.2</span>
+                        <span class="stat-label">Toneladas Destinadas</span>
+                    </div>
+                     <div class="stat-item">
+                        <span class="stat-value">85%</span>
+                        <span class="stat-label">Taxa de Aprovação</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="secoes-lado-a-lado section-spacing">
+
+            <div class="card dashboard-section">
+                <h2>Registrar Nova Destinação</h2>
+                <p class="form-subtitle">Envie o comprovante da destinação correta dos resíduos.</p>
+
+                <form id="registro-destinacao" class="form-content active" style="gap: 1.2rem; margin-top: 1.5rem;">
+                    <div class="input-group">
+                        <label for="tipo-residuo">Tipo de Resíduo</label>
+                        <select id="tipo-residuo" name="tipo-residuo" required>
+                            <option value="">Selecione...</option>
+                            <option value="secos">Recicláveis Secos (Papel, Plástico, Metal)</option>
+                            <option value="oleo">Óleo de Cozinha Usado</option>
+                            <option value="organicos">Orgânicos (Compostagem)</option>
+                             <option value="eletronicos">Eletrônicos</option>
+                            <option value="outros">Outros (Descrever)</option>
+                        </select>
+                    </div>
+                     <div class="input-group">
+                        <label for="empresa-destinataria">Empresa Destinatária / Cooperativa</label>
+                        <input type="text" id="empresa-destinataria" name="empresa-destinataria" placeholder="CNPJ ou Razão Social" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="quantidade">Quantidade (Kg ou Litros)</label>
+                        <input type="number" step="0.1" id="quantidade" name="quantidade" placeholder="Ex: 150.5" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="comprovante-doc">Comprovante (MTR, NF, Recibo)</label>
+                        <input type="file" id="comprovante-doc" name="comprovante-doc" accept=".pdf, image/*" required>
+                        <span class="input-helper">Anexe o documento que comprova a destinação.</span>
+                    </div>
+                    <button type="submit" class="btn-card btn-full" style="margin-top: 1rem;">Enviar Registro</button>
+                </form>
+            </div>
+
+            <div class="card dashboard-section" id="relatorios">
+                <h2>Histórico e Relatórios</h2>
+                <ul class="history-list">
+                    <li class="history-item status-approved">
+                        <span class="history-date">15/10/2025</span>
+                        <span class="history-desc">Recicláveis Secos - 150.5kg (Coop Recicla)</span>
+                        <span class="history-status">✅ Aprovado</span>
+                    </li>
+                    <li class="history-item status-approved">
+                        <span class="history-date">05/10/2025</span>
+                        <span class="history-desc">Óleo de Cozinha - 50L (Bio Tatuí Ltda)</span>
+                        <span class="history-status">✅ Aprovado</span>
+                    </li>
+                     <li class="history-item status-pending">
+                        <span class="history-date">28/09/2025</span>
+                        <span class="history-desc">Eletrônicos - 25kg (E-lixo Tatuí)</span>
+                        <span class="history-status">⌛ Em Análise</span>
+                    </li>
+                     <li class="history-item status-rejected">
+                        <span class="history-date">10/09/2025</span>
+                        <span class="history-desc">Recicláveis Secos - 120kg (Coop Recicla)</span>
+                        <span class="history-status">❌ Rejeitado (NF Inválida)</span>
+                    </li>
+                    </ul>
+                 <div style="margin-top: 2rem; text-align: center;">
+                    <a href="#" class="btn-card">Baixar Relatório Anual (PDF)</a>
+                 </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>Projeto Ideathon - Semana Tech 2025</p>
+        <div class="footer-logos">
+            <img src="assets/brasao-tatui.webp" alt="Brasão de Tatuí">
+            <img src="assets/logo-fatec.png" alt="Logo Fatec Tatuí">
+            <img src="assets/logo-point-media.jpg" alt="Logo Point Media">
+        </div>
+        <p>&copy; 2025 - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/global.js"></script>
+
+</body>
+</html>

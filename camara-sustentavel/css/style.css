@@ -788,6 +788,24 @@ body {
         display: inline;
         margin-bottom: 0;
     }
+
+    /* --- Ajuste Quebra de Linha Título Tatuí Verde --- */
+    /* Seleciona o h1 DENTRO do hero-banner (para especificidade) */
+    .hero-banner h1 .text-tatui-verde,
+    .hero-banner h1 .emoji-arvore {
+        display: block; /* Força a quebra de linha */
+        margin-left: auto; /* Centraliza se o h1 for text-align: center */
+        margin-right: auto; /* Centraliza se o h1 for text-align: center */
+    }
+
+    /* Opcional: Ajuste fino no espaçamento se necessário */
+     .hero-banner h1 .text-tatui-verde {
+         margin-top: 5px; /* Pequeno espaço entre as linhas */
+     }
+      .hero-banner h1 .emoji-arvore {
+         display: inline; /* Mantém o emoji na mesma linha do "Verde" */
+         margin-left: 5px; /* Espaço antes do emoji */
+     }
 }
 
 /* =================================================================== */
@@ -1126,5 +1144,76 @@ body {
 .input-group input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none; 
     margin: 0; 
+}
+
+/* =================================================================== */
+/* ====   22. ESTILOS DO DASHBOARD COMERCIAL (dashboard-pj.html)  ==== */
+/* =================================================================== */
+
+/* Card do Selo */
+.card-selo {
+    text-align: center; /* Centraliza o conteúdo */
+}
+.selo-display {
+    display: flex;
+    flex-direction: column; /* Ícone em cima, texto embaixo */
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.selo-icon {
+    font-size: 4rem; /* Ícone grande */
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+.selo-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-texto-escuro);
+}
+/* Cores específicas para cada selo (Exemplos) */
+.selo-bronze .selo-icon, .selo-bronze .selo-text { color: #cd7f32; } /* Bronze */
+.selo-prata .selo-icon, .selo-prata .selo-text { color: #aaa; } /* Prata */
+.selo-ouro .selo-icon, .selo-ouro .selo-text { color: var(--cor-secundaria-dourado); } /* Ouro */
+
+.selo-goal {
+    font-size: 0.9rem;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 1.5rem;
+}
+.selo-goal strong {
+    color: var(--cor-texto-escuro);
+    font-weight: 600;
+}
+/* Botão secundário para download do selo */
+.btn-card-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--cor-primaria-azul);
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid var(--cor-primaria-azul); /* Borda azul */
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    align-self: center; /* Centraliza o botão */
+}
+.btn-card-secondary:hover {
+    background-color: var(--cor-primaria-azul);
+    color: var(--cor-texto-claro);
+}
+
+.card-stats-pj h3 { margin-bottom: 20px; }
+
+#relatorios h2 { 
+     margin-bottom: 1.5rem;
+}
+
+/* =================================================================== */
+/* ====   23. AJUSTES RESPONSIVOS (Dashboard Comercial)           ==== */
+/* =================================================================== */
+@media (max-width: 610px) {
+    .selo-icon { font-size: 3rem; }
+    .selo-text { font-size: 1.2rem; }
 }
 
