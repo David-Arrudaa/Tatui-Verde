@@ -1,0 +1,1091 @@
+/* --- 1. Reset Básico e Fontes --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+/* --- 2. Paleta de Cores --- */
+:root {
+    --cor-primaria-azul: #0D2A4A;
+    --cor-secundaria-dourado: #FDB913;
+    --cor-terciaria-vermelho: #D42E12;
+    --cor-verde-sustentavel: #28a745;
+    --cor-fundo: #eaf3fd;
+    --cor-fundo-secao: #FFFFFF;
+    --cor-fundo-card-interno: #f8f9fa;
+    --cor-texto-escuro: #212529;
+    --cor-texto-claro: #FFFFFF;
+    --cor-texto-secundario: #6c757d;
+    --cor-texto-header-claro: rgba(255, 255, 255, 0.85);
+    --cor-texto-header-ativo: #FFFFFF;
+    --cor-borda: #dee2e6;
+    --cor-icone-wrapper: #eef3f5;
+    --cor-menu-mobile-hover: rgba(0, 0, 0, 0.03);
+    --cor-menu-mobile-active-bg: #0D2A4A;
+    --header-height: 70px;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-escuro);
+    line-height: 1.6;
+}
+
+/* --- 3. Header Padrão --- */
+.header-app {
+    width: 100%;
+    background-color: var(--cor-primaria-azul);
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--cor-secundaria-dourado);
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    min-height: var(--header-height);
+}
+.header-app .logo-link { display: flex; align-items: center; text-decoration: none; }
+.header-app .header-logo-img { height: 45px; margin-right: 10px;}
+.header-app .logo-text strong { color: var(--cor-texto-header-ativo); font-size: 1.2rem; font-weight: 600; line-height: 1.1; text-transform: uppercase; display: block; }
+.header-app .logo-text span { color: var(--cor-texto-header-claro); font-size: 0.8rem; }
+
+.header-app .nav-app {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 5px;
+}
+.header-app .nav-app li { margin: 0; }
+.header-app .nav-app a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--cor-texto-header-claro);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border: 1px solid transparent;
+    white-space: nowrap;
+}
+.header-app .nav-app a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--cor-texto-header-ativo);
+}
+.header-app .nav-app a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--cor-texto-header-ativo);
+    font-weight: 600;
+}
+.nav-icon {
+    margin-right: 8px;
+    display: none;
+    vertical-align: middle;
+    font-size: 1.2em;
+}
+
+.menu-close {
+     display: none;
+     position: absolute;
+     top: 10px;
+     right: 15px;
+     background: none;
+     border: none;
+     font-size: 2.2rem;
+     font-weight: bold;
+     color: var(--cor-texto-secundario);
+     cursor: pointer;
+     line-height: 1;
+     padding: 5px;
+}
+.menu-close:hover {
+    color: var(--cor-texto-escuro);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    margin-left: auto;
+}
+.hamburger-icon {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--cor-texto-header-ativo);
+    position: relative;
+    border-radius: 3px;
+    transition: background-color 0.2s ease-out;
+}
+.hamburger-icon::before,
+.hamburger-icon::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cor-texto-header-ativo);
+    position: absolute;
+    left: 0;
+    border-radius: 3px;
+    transition: transform 0.2s ease-out;
+}
+.hamburger-icon::before { top: -8px; }
+.hamburger-icon::after { bottom: -8px; }
+
+.header-status { display: none; }
+
+/* --- 4. Conteúdo Geral --- */
+.container {
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 0 25px;
+}
+
+.section-spacing {
+    margin-bottom: 45px;
+}
+
+.card-section {
+    padding: 30px 25px;
+    border-radius: 8px;
+    background: var(--cor-fundo-secao);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.card-section-alt {
+    padding: 30px 25px;
+    border-radius: 8px;
+    background: var(--cor-fundo);
+}
+
+/* --- 5. Hero Banner --- */
+.hero-banner {
+    background: var(--cor-fundo-secao);
+    padding: 55px 30px 65px 30px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.hero-banner h1 {
+    color: var(--cor-primaria-azul);
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.hero-banner p {
+    font-size: 1.1rem;
+    color: var(--cor-texto-secundario);
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- 6. Layouts de Seção --- */
+.secoes-lado-a-lado {
+    display: flex;
+    gap: 25px;
+    align-items: stretch;
+}
+.secoes-lado-a-lado > section {
+    flex: 1 1 0%;
+    min-width: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.secoes-lado-a-lado .link-destaque-container {
+    margin-top: auto;
+    padding-top: 25px;
+}
+
+.cards-informativos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* --- 7. Estilos de Cards Padrão --- */
+.card {
+    background: var(--cor-fundo-secao);
+    padding: 25px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-left: 5px solid var(--cor-secundaria-dourado);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(45, 55, 72, 0.1);
+}
+.card h3 {
+    color: var(--cor-primaria-azul);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.card p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+.btn-card {
+    display: inline-block;
+    background-color: var(--cor-primaria-azul);
+    color: var(--cor-texto-claro);
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: auto;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+.btn-card:hover { background-color: #081a2e; }
+
+
+/* --- 8. Seção "Por que Cuidar?" (Específico index.html) --- */
+.info-sustentabilidade h2 {
+    text-align: center;
+    color: var(--cor-primaria-azul);
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-content: start;
+    flex-grow: 1;
+}
+.info-card {
+    background: var(--cor-fundo-secao);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border: 1px solid var(--cor-borda);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-height: 70px;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+.info-card.info-card-destaque {
+    border-left: 5px solid var(--cor-secundaria-dourado);
+    padding-left: 10px;
+}
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+.info-icon-wrapper {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-icone-wrapper);
+}
+.info-icon { font-size: 1.4rem; }
+.info-text { flex-grow: 1; }
+.info-text h3 {
+    font-size: 0.85rem;
+    color: var(--cor-texto-secundario);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+.info-text p {
+    font-size: 1rem;
+    color: var(--cor-texto-escuro);
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+/* --- 9. Seção "Guia Rápido" (Específico index.html) --- */
+.guia-sustentabilidade h2 {
+    text-align: center;
+    color: var(--cor-primaria-azul);
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+.guia-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-content: start;
+    flex-grow: 1;
+}
+.guia-card {
+    background: var(--cor-fundo-secao);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border: 1px solid var(--cor-borda);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-height: 70px;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+.guia-card.erre-destaque:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+.guia-card.erre-destaque {
+    border-left: 5px solid var(--cor-secundaria-dourado);
+    padding-left: 10px;
+}
+.guia-icon-wrapper {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-icone-wrapper);
+}
+.guia-icon { font-size: 1.4rem; }
+.guia-text { flex-grow: 1; }
+.guia-text h3 {
+    font-size: 0.85rem;
+    color: var(--cor-texto-secundario);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+.guia-text p {
+    font-size: 1rem;
+    color: var(--cor-texto-escuro);
+    font-weight: bold;
+    line-height: 1.3;
+}
+.guia-text h4 {
+    font-size: 0.95rem;
+    color: var(--cor-primaria-azul);
+    margin-bottom: 3px;
+    font-weight: 600;
+}
+.guia-text a {
+    font-size: 0.85rem;
+    color: var(--cor-primaria-azul);
+    font-weight: bold;
+    text-decoration: none;
+}
+.guia-text a:hover { text-decoration: underline; }
+.guia-icon-wrapper.erre { background-color: var(--cor-secundaria-dourado); }
+.guia-icon-wrapper.erre span { font-size: 1rem; font-weight: bold; color: var(--cor-texto-escuro); }
+
+/* --- 10. Destaque Links (Vídeo/Curso) (Específico index.html) --- */
+.link-destaque-container {
+    margin-top: auto;
+    padding: 20px;
+    background-color: var(--cor-fundo-secao);
+    border-radius: 8px;
+    border-top: 3px solid var(--cor-primaria-azul);
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border: 1px solid var(--cor-borda);
+    margin-top: 25px;
+}
+.link-descricao {
+    font-size: 0.95rem;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+.link-botao {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--cor-primaria-azul);
+    color: var(--cor-texto-claro);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid var(--cor-primaria-azul);
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.link-botao:hover {
+    background-color: #081a2e;
+    border-color: #081a2e;
+    color: var(--cor-texto-claro);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* --- 11. Rodapé --- */
+.main-footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    background: var(--cor-primaria-azul);
+    color: rgba(255, 255, 255, 0.8);
+    border-top: 4px solid var(--cor-secundaria-dourado);
+}
+.main-footer p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+.footer-logos img {
+    max-height: 40px;
+    width: auto;
+}
+
+/* =================================================================== */
+/* ====   12. ESTILOS DO MÓDULO "TATUÍ VERDE" (Login PF/PJ)   ==== */
+/* =================================================================== */
+
+.form-container {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 2.5rem;
+    border-left: 5px solid var(--cor-fundo-secao);
+}
+
+.form-tabs {
+    display: flex;
+    border-bottom: 2px solid var(--cor-borda);
+    margin-bottom: 2.5rem;
+}
+
+.tab-link {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    margin-bottom: -2px;
+    color: var(--cor-texto-secundario);
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+.tab-link:hover { color: var(--cor-texto-escuro); }
+.tab-link.active {
+    color: var(--cor-primaria-azul);
+    border-bottom-color: var(--cor-primaria-azul);
+    font-weight: 600;
+}
+
+.form-content {
+    display: none;
+    display: grid;
+    gap: 1.5rem;
+}
+.form-content.active { display: grid; }
+.form-content:not(.active) { display: none; }
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--cor-texto-escuro);
+}
+.input-group input[type="text"],
+.input-group input[type="password"],
+.input-group input[type="email"] {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    background-color: var(--cor-fundo-card-interno);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.input-group input:focus {
+    border-color: var(--cor-primaria-azul);
+    box-shadow: 0 0 5px rgba(13, 42, 74, 0.2);
+    outline: none;
+}
+
+.forgot-password {
+    text-align: right;
+    font-size: 0.85rem;
+    color: var(--cor-primaria-azul);
+    text-decoration: none;
+    margin-top: -0.5rem;
+}
+.forgot-password:hover { text-decoration: underline; }
+
+.input-helper {
+    font-size: 0.85rem;
+    color: var(--cor-texto-secundario);
+    margin-top: -0.75rem;
+    line-height: 1.4;
+}
+
+.btn-full {
+    width: 100%;
+    text-align: center;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    font-size: 1.05rem;
+}
+
+.info-container {
+    border-left: 5px solid var(--cor-secundaria-dourado);
+    padding: 2rem 2.5rem;
+}
+.info-container h3 {
+    color: var(--cor-primaria-azul);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.info-container p {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+.info-container ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.info-container ul li {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    align-items: start;
+    column-gap: 10px;
+    row-gap: 0;
+}
+.info-container .info-card-icon {
+    grid-column: 1 / 2;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: var(--cor-primaria-azul);
+}
+.info-container ul li strong {
+    grid-column: 2 / 3;
+    color: var(--cor-primaria-azul);
+    font-weight: 600;
+    display: inline;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+.info-container ul li .info-card-text {
+    grid-column: 3 / 4;
+    font-size: 0.95rem;
+    color: var(--cor-texto-escuro);
+    line-height: 1.5;
+}
+.info-container ul li .info-card-text strong {
+    display: inline;
+    margin-bottom: 0;
+    color: var(--cor-texto-escuro);
+    font-weight: bold;
+}
+
+
+/* =================================================================== */
+/* ====   13. Media Query para Menu Hambúrguer e Mobile Globais  ==== */
+/* =================================================================== */
+
+@media (max-width: 610px) {
+    /* --- Ajustes Globais Mobile --- */
+    .container { padding: 0 15px; margin: 20px auto; }
+    .main-footer { padding: 20px 15px; margin-top: 30px;}
+    .footer-logos { gap: 15px; flex-wrap: wrap; }
+    .footer-logos img { max-height: 30px; }
+    .header-app { padding: 10px 15px; }
+
+    /* --- Estilos Menu Mobile --- */
+    .header-app .nav-app {
+        display: none;
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        width: 80%;
+        max-width: 320px;
+        height: calc(100vh - var(--header-height));
+        background-color: var(--cor-fundo);
+        box-shadow: -5px 0 15px rgba(0,0,0,0.15);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+        gap: 0;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-out;
+        z-index: 1002;
+        overflow-y: auto;
+    }
+    .header-app .nav-app.nav-app-mobile-active {
+        display: flex;
+        transform: translateX(0);
+    }
+    .header-app .nav-app li {
+        width: 100%;
+        border-bottom: 1px solid var(--cor-borda);
+    }
+     .header-app .nav-app li:first-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 15px;
+        height: auto;
+        background-color: var(--cor-fundo-secao);
+        color: var(--cor-texto-escuro);
+        font-weight: 600;
+        font-size: 1.1rem;
+        border-bottom: 1px solid var(--cor-borda);
+        position: sticky;
+        top: 0;
+        z-index: 1003;
+        margin-bottom: 0;
+    }
+    .header-app .nav-app li:first-child .menu-close {
+        position: static;
+        margin-left: 0;
+        font-size: 1.8rem;
+        color: var(--cor-texto-secundario);
+        padding: 0;
+        line-height: 1;
+    }
+    .header-app .nav-app li:first-child .menu-close:hover { color: var(--cor-texto-escuro); }
+    .header-app .nav-app li:first-child a { display: none; }
+    .header-app .nav-app li:not(:first-child) a {
+        display: flex;
+        align-items: center;
+        padding: 16px 25px;
+        border-radius: 0;
+        width: 100%;
+        font-size: 1rem;
+        border: none;
+        color: var(--cor-primaria-azul);
+        font-weight: 500;
+        background-color: transparent;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .header-app .nav-app a .nav-icon {
+        display: inline-block;
+        width: 24px;
+        text-align: center;
+        margin-right: 15px;
+        font-size: 1.1em;
+        color: var(--cor-texto-secundario);
+    }
+    .header-app .nav-app li:not(:first-child) a:hover {
+        background-color: var(--cor-menu-mobile-hover);
+        color: var(--cor-primaria-azul);
+    }
+    .header-app .nav-app li:not(:first-child) a.active {
+        background-color: var(--cor-primaria-azul);
+        color: var(--cor-texto-header-ativo);
+        font-weight: 600;
+    }
+    .header-app .nav-app li:not(:first-child) a.active .nav-icon { color: var(--cor-texto-header-ativo); }
+    .menu-toggle { display: block; }
+    .menu-close { display: block; }
+    .header-status { display: none; }
+
+    /* --- Ajustes Responsivos Index --- */
+    .hero-banner { padding: 30px 15px 40px 15px; }
+    .hero-banner h1 { font-size: 1.8rem; }
+    .hero-banner p { font-size: 1rem; }
+    .secoes-lado-a-lado > section { margin-bottom: 30px; }
+    .cards-informativos { grid-template-columns: 1fr; gap: 15px; }
+    .card { padding: 20px; }
+    .card h3 { font-size: 1.2rem; }
+    .info-card, .guia-card { gap: 10px; padding: 12px; }
+    .info-text p, .guia-text p { font-size: 0.95rem; }
+    .info-sustentabilidade h2, .guia-sustentabilidade h2 { font-size: 1.5rem; margin-bottom: 20px; }
+
+    /* --- Ajustes Responsivos Tatuí Verde --- */
+    .form-container {
+        padding: 1.5rem 1.2rem;
+        border-left: 5px solid var(--cor-fundo-secao);
+    }
+    .tab-link {
+        font-size: 1rem;
+        padding: 0.5rem 0.5rem;
+        flex-grow: 1;
+        text-align: center;
+    }
+    .form-tabs { margin-bottom: 2rem; }
+    
+    .info-container { padding: 1.5rem 1.2rem; }
+    .info-container ul li {
+        grid-template-columns: auto 1fr; 
+        column-gap: 12px;
+    }
+    .info-container ul li strong {
+        grid-column: 2 / 3;
+        display: block; 
+        margin-bottom: 3px;
+    }
+    .info-container ul li .info-card-text {
+        grid-column: 2 / 3; 
+    }
+}
+
+/* =================================================================== */
+/* ====   14. Media Query para Layouts Desktop Específicos       ==== */
+/* =================================================================== */
+
+@media (min-width: 993px) {
+    /* --- Layout Grid Login (Desktop) --- */
+    .login-layout-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 50/50 */
+        align-items: start; /* Alinha pelo topo */
+        gap: 25px;
+    }
+    .login-layout-grid .form-container { max-width: none; }
+    .login-layout-grid > .card { margin-top: 0; margin-bottom: 0; }
+}
+
+@media (max-width: 992px) {
+    /* --- Ajustes específicos do index.html (mantidos) --- */
+    .secoes-lado-a-lado { flex-direction: column; gap: 0; }
+    .secoes-lado-a-lado > section { margin-bottom: 45px; height: auto; }
+    .secoes-lado-a-lado > section:last-child { margin-bottom: 0; }
+}
+
+/* =================================================================== */
+/* ====   15. SEÇÃO "COMO FUNCIONA?" (tatui-verde.html)         ==== */
+/* =================================================================== */
+
+.how-it-works-section {
+    background-color: var(--cor-fundo-secao); /* Fundo branco, como os cards */
+    padding: 35px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    text-align: center;
+}
+
+.how-it-works-section h2 {
+    color: var(--cor-primaria-azul);
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-around; /* Espaça igualmente */
+    gap: 25px; /* Espaço entre os passos */
+    flex-wrap: wrap; /* Quebra a linha no mobile */
+}
+
+.step-card {
+    flex: 1; /* Tenta ocupar o mesmo espaço */
+    min-width: 200px; /* Largura mínima antes de quebrar */
+    max-width: 280px; /* Largura máxima */
+    padding: 15px;
+}
+
+.step-icon {
+    font-size: 2.5rem; /* Tamanho do ícone */
+    margin-bottom: 15px;
+    color: var(--cor-secundaria-dourado); /* Cor de destaque */
+}
+
+.step-card h3 {
+    font-size: 1.1rem;
+    color: var(--cor-texto-escuro);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.step-card p {
+    font-size: 0.9rem;
+    color: var(--cor-texto-secundario);
+    line-height: 1.5;
+}
+
+/* Ajustes Mobile */
+@media (max-width: 768px) {
+    .steps-container {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 30px;
+    }
+    .how-it-works-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+}
+
+.text-tatui-verde {
+    color: var(--cor-verde-sustentavel);
+}
+
+.emoji-arvore {
+    font-size: 1.5em; 
+}
+
+/* =================================================================== */
+/* ====   18. ESTILOS DO DASHBOARD CIDADÃO (dashboard-pf.html)   ==== */
+/* =================================================================== */
+
+/* Ajuste no H1 do Hero Banner desta página */
+.hero-banner h1 .login-icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+    vertical-align: -3px;
+}
+
+/* Card de Meta */
+.card-meta h3 { margin-bottom: 10px; }
+.card-meta p { font-size: 0.9rem; margin-bottom: 20px; }
+.card-meta strong { font-weight: 700; } /* Destaca o valor da meta */
+
+.progress-bar-container {
+    width: 100%;
+    height: 20px;
+    background-color: var(--cor-borda);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    border: 1px solid #ddd; /* Borda sutil */
+}
+.progress-bar {
+    height: 100%;
+    background-color: var(--cor-verde-sustentavel);
+    border-radius: 10px 0 0 10px; /* Arredonda só a ponta inicial */
+    transition: width 0.5s ease-in-out;
+}
+.progress-label {
+    display: block; /* Garante que fique abaixo */
+    text-align: right;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--cor-texto-secundario);
+}
+
+/* Card de Estatísticas */
+.card-stats h3 { margin-bottom: 20px; }
+.stat-grid {
+    display: grid;
+    /* 3 colunas em desktop, 1 em mobile */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    text-align: center;
+}
+.stat-item .stat-value {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--cor-primaria-azul);
+    line-height: 1.1;
+}
+.stat-item .stat-label {
+    display: block;
+    font-size: 0.85rem; /* Menor que antes */
+    color: var(--cor-texto-secundario);
+    margin-top: 5px;
+}
+
+/* Formulário de Registro (Ajustes) */
+.form-container h2 {
+    font-size: 1.5rem;
+    color: var(--cor-primaria-azul);
+    font-weight: 600;
+    margin-bottom: 8px; /* Adiciona espaço abaixo */
+}
+.form-subtitle {
+    font-size: 0.95rem;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 1.5rem; /* Aumenta espaço abaixo */
+}
+.input-group select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    background-color: #fff; /* Fundo branco para select */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5%22%20stroke%3D%22%236c757d%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    cursor: pointer;
+}
+.input-group input[type="file"] {
+    padding: 0.6rem 1rem;
+    background-color: #fff;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    cursor: pointer;
+}
+.input-group input[type="file"]::file-selector-button {
+    font-weight: 500; /* Menos negrito */
+    color: var(--cor-primaria-azul);
+    background-color: var(--cor-fundo-card-interno);
+    border: none; /* Remove borda do botão */
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-right: 1px solid var(--cor-borda); /* Linha divisória */
+}
+.input-group input[type="file"]::file-selector-button:hover {
+    background-color: #eee;
+}
+
+/* Histórico de Envios */
+.card-section-alt h2 { /* Título do histórico */
+    font-size: 1.5rem;
+    color: var(--cor-primaria-azul);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+.history-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 400px; /* Altura máxima com scroll (opcional) */
+    overflow-y: auto; /* Adiciona scroll se a lista for longa */
+    padding-right: 10px; /* Espaço para o scroll */
+}
+.history-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    padding: 1rem;
+    background-color: var(--cor-fundo-card-interno);
+    border-radius: 6px;
+    border-left: 5px solid var(--cor-borda);
+}
+.history-item .history-date {
+    font-size: 0.85rem; /* Menor */
+    font-weight: 500;
+    color: var(--cor-texto-secundario);
+    white-space: nowrap; /* Impede quebra de linha da data */
+}
+.history-item .history-desc {
+    font-size: 0.9rem; /* Menor */
+    font-weight: 500;
+    color: var(--cor-texto-escuro);
+    flex-grow: 1;
+    margin-right: 1rem; /* Espaço antes do status */
+}
+.history-item .history-status {
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.history-item.status-approved { border-left-color: var(--cor-verde-sustentavel); }
+.history-item.status-approved .history-status { color: var(--cor-verde-sustentavel); }
+.history-item.status-pending { border-left-color: var(--cor-secundaria-dourado); }
+.history-item.status-pending .history-status { color: #cc8e00; } /* Dourado mais escuro para texto */
+.history-item.status-rejected { border-left-color: var(--cor-terciaria-vermelho); }
+.history-item.status-rejected .history-status { color: var(--cor-terciaria-vermelho); }
+
+
+/* =================================================================== */
+/* ====   19. AJUSTES RESPONSIVOS (Dashboard Cidadão)            ==== */
+/* =================================================================== */
+@media (max-width: 610px) {
+    .history-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .history-item .history-status {
+        width: 100%;
+        text-align: right;
+        margin-top: 5px;
+    }
+    .history-item .history-desc {
+         margin-right: 0;
+    }
+    .history-list {
+        max-height: 300px; /* Altura menor no mobile */
+    }
+}
+
+/* =================================================================== */
+/* ====   20. AJUSTES FINAIS DASHBOARD CIDADÃO (Layout c/ Cards)  ==== */
+/* =================================================================== */
+
+/* Remove a borda esquerda padrão dos cards DENTRO do layout lado-a-lado */
+.secoes-lado-a-lado > .card.dashboard-section {
+    border-left: none; /* Remove a borda dourada aqui */
+}
+
+/* Ajusta o título dentro dos novos cards */
+.dashboard-section h2 {
+    font-size: 1.5rem;
+    color: var(--cor-primaria-azul);
+    font-weight: 600;
+    margin-bottom: 8px; /* Ajusta espaço abaixo do título */
+}
+
+/* Ajusta o subtítulo do formulário */
+.dashboard-section .form-subtitle {
+    font-size: 0.95rem;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 1.5rem; /* Mantém espaço antes do form */
+}
+
+/* Ajusta a lista de histórico dentro do card */
+.dashboard-section .history-list {
+     margin-top: 1.5rem; /* Espaço após o título "Meu Histórico" */
+     max-height: none; /* Remove a altura fixa, deixa o card crescer */
+     overflow-y: visible; /* Remove o scroll */
+     padding-right: 0; /* Remove padding do scroll */
+}
+
+.dashboard-section .form-content {
+    margin-top: 0; 
+}
+
+
+@media (max-width: 610px) {
+    .dashboard-section {
+         padding: 20px; 
+    }
+     .dashboard-section h2 {
+        font-size: 1.3rem; 
+    }
+}
+
+
+.input-group input[type="number"]::-webkit-outer-spin-button,
+.input-group input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+

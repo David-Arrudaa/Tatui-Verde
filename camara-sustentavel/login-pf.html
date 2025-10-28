@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Cidadão - Tatuí Verde</title>
+    <link rel="icon" href="assets/brasao-tatui.webp" type="image/webp">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header-app">
+        <a href="../index.html" class="logo-link">
+            <img src="assets/brasao-tatui.webp" alt="Brasão de Tatuí" class="header-logo-img">
+            <div class="logo-text">
+                <strong>Prefeitura de Tatuí</strong>
+                <span>Sistema de Gestão Sustentável</span>
+            </div>
+        </a>
+        <button class="menu-toggle" aria-label="Abrir menu">
+            <span class="hamburger-icon"></span>
+        </button>
+        <ul class="nav-app">
+            <li><button class="menu-close" aria-label="Fechar menu">&times;</button></li>
+            <li><a href="../index.html"><span class="nav-icon">🏠</span> Início</a></li>
+            <li><a href="mapa.html"><span class="nav-icon">📌</span> Onde Descartar?</a></li>
+            <li><a href="dashboard.html"><span class="nav-icon">📊</span> Visão Geral</a></li>
+            <li><a href="tatui-verde.html" class="active"><span class="nav-icon">🌳</span> Tatuí Verde</a></li>
+        </ul>
+    </header>
+
+    <main class="container">
+        
+        <section class="hero-banner section-spacing">
+            <h1>🏡 Painel do Cidadão</h1>
+            <p>Acesse para registrar sua reciclagem e acompanhar seus benefícios.</p>
+        </section>
+
+        <section class="cards-informativos login-layout-grid section-spacing">
+            
+            <div class="card form-container">
+                
+                <div class="form-tabs">
+                    <button class="tab-link active" data-tab="login">Entrar</button>
+                    <button class="tab-link" data-tab="cadastro">Cadastrar</button>
+                </div>
+
+                <form id="login" class="form-content active">
+                    <div class="input-group">
+                        <label for="cpf-login">CPF</label>
+                        <input type="text" id="cpf-login" name="cpf-login" placeholder="Digite seu CPF" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="senha-login">Senha</label>
+                        <input type="password" id="senha-login" name="senha-login" placeholder="Digite sua senha" required>
+                        <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                    </div>
+                    <a href="dashboard-pf.html" class="btn-card btn-full">Entrar</a>
+                </form>
+
+                <form id="cadastro" class="form-content">
+                    <div class="input-group">
+                        <label for="nome-cadastro">Nome Completo</label>
+                        <input type="text" id="nome-cadastro" name="nome-cadastro" placeholder="Seu nome completo" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="cpf-cadastro">CPF</label>
+                        <input type="text" id="cpf-cadastro" name="cpf-cadastro" placeholder="Seu CPF" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email-cadastro">E-mail</label>
+                        <input type="email" id="email-cadastro" name="email-cadastro" placeholder="seu.email@exemplo.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="iptu-cadastro">Matrícula do IPTU</label>
+                        <input type="text" id="iptu-cadastro" name="iptu-cadastro" placeholder="Nº da Inscrição Cadastral do Imóvel" required>
+                        <span class="input-helper">
+                            Informe a matrícula do imóvel que receberá o benefício do IPTU Verde.
+                        </span>
+                    </div>
+                    <div class="input-group">
+                        <label for="senha-cadastro">Crie uma Senha</label>
+                        <input type="password" id="senha-cadastro" name="senha-cadastro" placeholder="Mínimo 6 caracteres" required>
+                    </div>
+                    <button type="submit" class="btn-card btn-full">Criar Conta</button>
+                </form>
+
+            </div>
+
+            <div class="card info-container">
+                <h3>Por que se Cadastrar?</h3>
+                <p>Ao registrar sua reciclagem, você transforma uma simples ação em <strong>benefícios reais</strong> para você e para a cidade!</p>
+                <ul>
+                    <li>
+                        <strong>✅ IPTU Verde:</strong> Seu esforço é convertido em pontos para garantir seu desconto no IPTU.
+                    </li>
+                    <li>
+                        <strong>🌍 Impacto Real:</strong> Acompanhe em tempo real quantas árvores você ajudou a salvar e a quantidade de CO₂ que deixou de ser emitida.
+                    </li>
+                    <li>
+                        <strong>🤝 Apoio Local:</strong> Você fortalece as cooperativas de reciclagem de Tatuí, gerando mais emprego e renda na nossa cidade.
+                    </li>
+                    <li>
+                        <strong>🏆 Cidade Limpa:</strong> Faça parte do movimento que está tornando Tatuí uma referência em sustentabilidade.
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>Projeto Ideathon - Semana Tech 2025</p>
+        <div class="footer-logos">
+            <img src="assets/brasao-tatui.webp" alt="Brasão de Tatuí">
+            <img src="assets/logo-fatec.png" alt="Logo Fatec Tatuí">
+            <img src="assets/logo-point-media.jpg" alt="Logo Point Media">
+        </div>
+        <p>&copy; 2025 - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/global.js"></script>
+
+</body>
+</html>

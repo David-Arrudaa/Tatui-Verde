@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Painel - Tatuí Verde</title>
+    <link rel="icon" href="assets/brasao-tatui.webp" type="image/webp">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header-app">
+        <a href="../index.html" class="logo-link">
+            <img src="assets/brasao-tatui.webp" alt="Brasão de Tatuí" class="header-logo-img">
+            <div class="logo-text">
+                <strong>Prefeitura de Tatuí</strong>
+                <span>Sistema de Gestão Sustentável</span>
+            </div>
+        </a>
+        <button class="menu-toggle" aria-label="Abrir menu">
+            <span class="hamburger-icon"></span>
+        </button>
+        <ul class="nav-app">
+            <li><button class="menu-close" aria-label="Fechar menu">&times;</button></li>
+            <li><a href="../index.html"><span class="nav-icon">🏠</span> Início</a></li>
+            <li><a href="mapa.html"><span class="nav-icon">📌</span> Onde Descartar?</a></li>
+            <li><a href="dashboard.html"><span class="nav-icon">📊</span> Visão Geral</a></li>
+            <li><a href="tatui-verde.html" class="active"><span class="nav-icon">🌳</span> Tatuí Verde</a></li>
+        </ul>
+    </header>
+
+    <main class="container">
+
+        <section class="hero-banner section-spacing">
+             <h1><span class="login-icon">🏡</span> Meu Painel Cidadão</h1>
+             <p>Olá, [Nome do Cidadão]! Acompanhe seu progresso e registre suas reciclagens.</p>
+        </section>
+
+        <section class="cards-informativos section-spacing">
+            <div class="card card-meta">
+                <h3>Sua Meta: IPTU Verde 2026</h3>
+                <p>Você precisa de <strong>150kg</strong> de recicláveis por ano para garantir seu desconto.</p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 45%;"></div>
+                </div>
+                <span class="progress-label">70kg / 150kg (45%)</span>
+            </div>
+            <div class="card card-stats">
+                <h3>Seu Impacto Total</h3>
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <span class="stat-value">12</span>
+                        <span class="stat-label">Envios Aprovados</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">3</span>
+                        <span class="stat-label">Árvores Salvas</span>
+                    </div>
+                     <div class="stat-item">
+                        <span class="stat-value">70</span>
+                        <span class="stat-label">Kg Reciclados (Este Ano)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="secoes-lado-a-lado section-spacing">
+
+            <div class="card dashboard-section">
+                <h2>Registrar Nova Reciclagem</h2>
+                <p class="form-subtitle">Envie seu comprovante de entrega da cooperativa.</p>
+
+                <form id="registro-reciclagem" class="form-content active" style="gap: 1.2rem; margin-top: 1.5rem;">
+                    <div class="input-group">
+                        <label for="ponto-coleta">Ponto de Coleta / Cooperativa</label>
+                        <select id="ponto-coleta" name="ponto-coleta" required>
+                            <option value="">Selecione...</option>
+                            <option value="coop1">Cooperativa Recicla Tatuí</option>
+                            <option value="coop2">Associação de Catadores XYZ</option>
+                            <option value="ecoponto1">Ecoponto Vila Esperança</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="peso-reciclagem">Peso (kg)</label>
+                        <input type="number" step="0.1" id="peso-reciclagem" name="peso-reciclagem" placeholder="Ex: 12.5" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="comprovante-foto">Foto do Comprovante</label>
+                        <input type="file" id="comprovante-foto" name="comprovante-foto" accept="image/*" required>
+                        <span class="input-helper">Anexe a foto do recibo fornecido pela cooperativa.</span>
+                    </div>
+                    <button type="submit" class="btn-card btn-full" style="margin-top: 1rem;">Enviar Comprovante</button>
+                </form>
+            </div>
+
+            <div class="card dashboard-section">
+                <h2>Meu Histórico de Envios</h2>
+                <ul class="history-list">
+                    <li class="history-item status-approved">
+                        <span class="history-date">10/10/2025</span>
+                        <span class="history-desc">Cooperativa Recicla Tatuí - 12.5kg</span>
+                        <span class="history-status">✅ Aprovado</span>
+                    </li>
+                    <li class="history-item status-pending">
+                        <span class="history-date">25/09/2025</span>
+                        <span class="history-desc">Ecoponto Vila Esperança - 8.0kg</span>
+                        <span class="history-status">⌛ Em Análise</span>
+                    </li>
+                    <li class="history-item status-rejected">
+                        <span class="history-date">15/09/2025</span>
+                        <span class="history-desc">Cooperativa Recicla Tatuí - 5.0kg</span>
+                        <span class="history-status">❌ Rejeitado (Foto Ilegível)</span>
+                    </li>
+                     <li class="history-item status-approved">
+                        <span class="history-date">01/09/2025</span>
+                        <span class="history-desc">Cooperativa Recicla Tatuí - 15.0kg</span>
+                        <span class="history-status">✅ Aprovado</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>Projeto Ideathon - Semana Tech 2025</p>
+        <div class="footer-logos">
+            <img src="assets/brasao-tatui.webp" alt="Brasão de Tatuí">
+            <img src="assets/logo-fatec.png" alt="Logo Fatec Tatuí">
+            <img src="assets/logo-point-media.jpg" alt="Logo Point Media">
+        </div>
+        <p>&copy; 2025 - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/global.js"></script>
+
+</body>
+</html>
