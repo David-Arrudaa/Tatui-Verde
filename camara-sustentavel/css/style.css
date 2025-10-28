@@ -736,18 +736,57 @@ body {
     }
     .form-tabs { margin-bottom: 2rem; }
     
+    /* --- Ajustes Responsivos Tatuí Verde --- */
+    .form-container {
+        padding: 1.5rem 1.2rem;
+        border-left: 5px solid var(--cor-fundo-secao);
+    }
+    .tab-link {
+        font-size: 1rem;
+        padding: 0.5rem 0.5rem;
+        flex-grow: 1;
+        text-align: center;
+    }
+    .form-tabs { margin-bottom: 2rem; }
+    
     .info-container { padding: 1.5rem 1.2rem; }
+
+    /* * CORREÇÃO MOBILE: Centraliza Ícone e Texto
+     */
     .info-container ul li {
-        grid-template-columns: auto 1fr; 
-        column-gap: 12px;
+        /* Muda de Grid para Flex Column */
+        display: flex; 
+        flex-direction: column; /* Empilha: Ícone em cima, Texto embaixo */
+        align-items: center; /* Centraliza horizontalmente */
+        text-align: center; /* Centraliza todo o texto */
+        gap: 8px; /* Espaço entre ícone e bloco de texto */
+        /* Remove regras de grid desnecessárias no mobile */
+        grid-template-columns: unset; 
+        column-gap: unset;
+    }
+    .info-container .info-card-icon {
+        /* Remove posicionamento de grid */
+        grid-column: unset;
+        margin-top: 0; /* Reseta margem */
+        font-size: 1.8rem; /* Ícone um pouco maior */
+        margin-bottom: 5px; /* Espaço abaixo do ícone */
     }
     .info-container ul li strong {
-        grid-column: 2 / 3;
-        display: block; 
-        margin-bottom: 3px;
+        /* Remove posicionamento de grid */
+        grid-column: unset;
+        display: block; /* Garante quebra de linha antes do texto */
+        margin-bottom: 5px; /* Espaço entre título e descrição */
+        font-size: 1rem; /* Tamanho do título no mobile */
     }
     .info-container ul li .info-card-text {
-        grid-column: 2 / 3; 
+        /* Remove posicionamento de grid */
+        grid-column: unset;
+        font-size: 0.9rem; /* Texto descritivo um pouco menor */
+    }
+     /* Garante que strong dentro do texto fique alinhado */
+    .info-container ul li .info-card-text strong {
+        display: inline;
+        margin-bottom: 0;
     }
 }
 
